@@ -1,0 +1,13 @@
+extends layout 
+
+block content
+  .row 
+    .col-md-4
+      .card 
+        h3 Editer une tâche
+        .card-body 
+            form(method= "POST", action="/editer/" + todo.id + "?_method=PUT")  
+                .mb-3
+                    label.form-label(for='todo') Editer une tache:
+                    input.form-control#todo(type='text',value=todo.title, name= "title")
+                input(type="submit", value="ajouter").btn.btn-primary.btn-block
